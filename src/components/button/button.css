@@ -1,0 +1,17 @@
+.btn{
+  color: rgb(240, 240, 240);
+  background-color: rgb(27, 136, 30);
+  height: 25px;
+  border-radius: 5px;
+  margin: 5px 0 0 5px;
+  border: none;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.btn:hover{
+  background-color: rgb(54, 96, 66);
+}
+
+.btn:active{
+  background-color: rgb(32, 103, 42);
+}
