@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Form } from "./form/form.js";
 import { List } from "./list/List.js";
 import { Presentation } from './presentations/Presentation.js'
-import { Contador } from  "./contador/Contador.js"
+import { Count } from  "./contador/Count.js"
 
 
 export const TaskApp = () => {
-  const [tasks, setTasks] = useState([]);
-  const [currentTask, setCurrentTask] = useState("");
+    const [tasks, setTasks] = useState<string[]>([]);
+  const [currentTask, setCurrentTask] = useState<string>('');
 
   const handleAddTask = () => {
     if (currentTask.trim() === "") return;
@@ -15,7 +15,7 @@ export const TaskApp = () => {
     setCurrentTask("");
   };
 
-  const handleDeleteTask = (index) => {
+  const handleDeleteTask = (index: number) => {
     setTasks(tasks.filter((_, i) => i !== index));
   };
 
@@ -24,9 +24,10 @@ export const TaskApp = () => {
       <Presentation />
       <Form value={currentTask} onChange={setCurrentTask} onAddTask={handleAddTask} />
       <List tasks={tasks} onDeleteTask={handleDeleteTask} />
-      <Contador value={1}/>
+      <Count/>
     </>
   );
 };
+
 
 
